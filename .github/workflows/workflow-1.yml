@@ -7,12 +7,13 @@ on:
         description: "A number input"
         required: true
         type: number
+        default: 42
 
 jobs:
   caller1:
     uses: ./.github/workflows/workflow-2.yml
     with:
-      input1: ${{ inputs.input1 }}
+      input1: ${{ toJSON(inputs.input1) }}
 
   torun:
     runs-on: ubuntu-latest
