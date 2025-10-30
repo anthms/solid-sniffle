@@ -13,7 +13,7 @@ jobs:
   caller1:
     uses: ./.github/workflows/workflow-2.yml
     with:
-      input1: ${{ inputs.input1 }}
+      input1: 12
 
   caller2:
     uses: ./.github/workflows/workflow-2.yml
