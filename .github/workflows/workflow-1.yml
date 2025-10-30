@@ -7,15 +7,14 @@ on:
         description: "A number input"
         required: true
         type: number
-        default: 42
 
 jobs:
   caller1:
     uses: ./.github/workflows/workflow-2.yml
     with:
-      input1: 12
+      input1: ${{ inputs.input1 }}
 
-  caller2:
-    uses: ./.github/workflows/workflow-2.yml
-    with:
-      input1: 12
+  torun:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'done'
